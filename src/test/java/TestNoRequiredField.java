@@ -12,7 +12,7 @@ import static org.junit.Assert.*;
 import static java.net.HttpURLConnection.*;
 
 @RunWith(Parameterized.class)
-public class ParameterizedTestNoRequiredField {
+public class TestNoRequiredField {
     private final String login;
     private final String password;
     private boolean isCourierCreated;
@@ -20,7 +20,7 @@ public class ParameterizedTestNoRequiredField {
     private Courier courier;
     private int statusCode;
 
-    public ParameterizedTestNoRequiredField(String login, String password, boolean isCourierCreated) {
+    public TestNoRequiredField(String login, String password, boolean isCourierCreated) {
         this.login = login;
         this.password = password;
         this.isCourierCreated = isCourierCreated;

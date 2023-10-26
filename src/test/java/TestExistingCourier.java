@@ -31,9 +31,9 @@ public class TestExistingCourier {
         statusCode = createResponse.extract().statusCode();
         assertEquals("The status code is invalid", HTTP_CREATED, statusCode);
 
-        ValidatableResponse createDuplicatedCourierResponse = courierCreate.create(courier);
-        statusCode = createDuplicatedCourierResponse.extract().statusCode();
-        String isCourierCreated = createDuplicatedCourierResponse.extract().path("message");
+        ValidatableResponse createExistingCourier = courierCreate.create(courier);
+        statusCode = createExistingCourier.extract().statusCode();
+        String isCourierCreated = createExistingCourier.extract().path("message");
         assertEquals("The status code is invalid", HTTP_CONFLICT, statusCode);
         assertEquals("The courier is already created", "Этот логин уже используется. Попробуйте другой.", isCourierCreated);
 
